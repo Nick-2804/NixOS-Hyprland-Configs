@@ -1,0 +1,88 @@
+# Don't print a new line at the start of the prompt
+add_newline = false
+
+# Prompt format
+format = """
+$cmd_duration $directory$git_branch
+$character"""
+
+[fill]
+symbol = '-'
+style = 'fg:#1a1a1a'
+
+[character]
+success_symbol = "[ ](bold #ece9ff)"
+error_symbol = "[ ](bold #e67e80)"
+
+[package]
+disabled = true
+
+[git_branch]
+style = "bg:#1a1a1a fg:#ece9ff"
+symbol = "󰘬"
+truncation_length = 12
+truncation_symbol = ""
+format = " 󰜥 [](bold #1a1a1a)[$symbol $branch(:$remote_branch)]($style)[ ](bold #1a1a1a)"
+
+[git_commit]
+commit_hash_length = 4
+tag_symbol = " "
+
+[git_state]
+format = '[($state( $progress_current of $progress_total))]($style) '
+cherry_pick = "[🍒 PICKING](bold #dbbc7f)"
+
+[git_status]
+conflicted = " 🏳 "
+ahead = " 🏎💨 "
+behind = " 😰 "
+diverged = " 😵 "
+untracked = " 🤷‍"
+stashed = " 📦 "
+modified = " 📝 "
+staged = '[++($count)](#ece9ff)'
+renamed = " ✍️ "
+deleted = " 🗑 "
+
+[hostname]
+ssh_only = false
+format = "[•$hostname](bg:#1a1a1a fg:#ece9ff)[](bold #1a1a1a)"
+trim_at = ".companyname.com"
+disabled = false
+
+[line_break]
+disabled = false
+
+[memory_usage]
+disabled = true
+
+[time]
+disabled = true
+
+[username]
+style_user = "bold bg:#1a1a1a fg:#ece9ff"
+style_root = "bold bg:#e67e80 fg:#1e2326"
+format = "[](bold #1a1a1a)[$user]($style)"
+disabled = false
+show_always = true
+
+[directory]
+home_symbol = " "
+read_only = "  "
+style = "bg:#1a1a1a fg:#ece9ff"
+truncation_length = 2
+truncation_symbol = ".../"
+format = '[](bold #1a1a1a)[󰉋 → $path]($style)[](bold #1a1a1a)'
+
+[directory.substitutions]
+"Desktop" = "  "
+"Documents" = "  "
+"Downloads" = "  "
+"Music" = " 󰎈 "
+"Pictures" = "  "
+"Videos" = "  "
+"GitHub" = " 󰊤 "
+
+[cmd_duration]
+min_time = 0
+format = '[](bold #1a1a1a)[󰪢 $duration](bold bg:#1a1a1a fg:#ece9ff)[](bold #1a1a1a)'
