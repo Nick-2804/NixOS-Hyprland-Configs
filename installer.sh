@@ -6,34 +6,6 @@ set -e
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 cd "$SCRIPT_DIR"
 
-echo "Before using this script make sure you installed all the needed pkgs"
-echo "Those pkgs are: hyprland, kitty, starship, fish, dunst, waybar, yazi, and walker"
-
-required=(
-    hyprland
-    kitty
-    fish
-    dunst
-    waybar
-    yazi
-    walker
-    starship
-)
-
-missing=0
-
-for pkg in "${required[@]}"; do
-    if ! command -v "$pkg" &>/dev/null; then
-        echo "Missing: $pkg"
-        missing=1
-    fi
-done
-
-if [[ $missing -eq 1 ]]; then
-    echo "Install the missing packages before running this script."
-    exit 1
-fi
-
 # Create a timestamped backup directory
 backup="$HOME/.config-backup-$(date +%Y%m%d-%H%M%S)"
 mkdir -p "$backup"
