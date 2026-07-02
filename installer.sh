@@ -1,5 +1,11 @@
 #!/bin/bash
 
+set -e
+
+# Always use the directory where this script is located
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+cd "$SCRIPT_DIR"
+
 echo "Before using this script make sure you installed all the needed pkgs"
 echo "Those pkgs are: hyprland, kitty, starship, fish, dunst, waybar, yazi, and walker"
 
@@ -28,26 +34,35 @@ if [[ $missing -eq 1 ]]; then
     exit 1
 fi
 
-for dir in hypr kitty fish dunst waybar walker yazi environment.d; do
-    if [[ -e ~/.config/$dir ]]; then
-        mv ~/.config/$dir "$backup/"
+# Create a timestamped backup directory
+backup="$HOME/.config-backup-$(date +%Y%m%d-%H%M%S)"
+mkdir -p "$backup"
+
+# Backup existing configs
+for dir in colorschemes dunst environment.d fish hypr kitty scripts walker waybar yazi; do
+    if [[ -e "$HOME/.config/$dir" ]]; then
+        mv "$HOME/.config/$dir" "$backup/"
     fi
 done
 
-mkdir -p ~/Pictures
-mkdir -p ~/.config
+# Backup starship config if it exists
+if [[ -f "$HOME/.config/starship.toml" ]]; then
+    mv "$HOME/.config/starship.toml" "$backup/"
+fi
 
-mv Wallpapers ~/Pictures
+mkdir -p "$HOME/.config"
+mkdir -p "$HOME/Pictures"
 
-mv colorschemes ~/.config
-mv dunst ~/.config
-mv environment.d ~/.config
-mv fish ~/.config
-mv hypr ~/.config
-mv kitty ~/.config
-mv scripts ~/.config
-mv walker ~/.config
-mv waybar ~/.config
-mv yazi ~/.config
-
-
+# Install configs
+mv colorschemes "$HOME/.config/"
+mv dunst "$HOME/.config/"
+mv environment.d "$HOME/.config/"
+mv fish "$HOME/.config/"
+mv hypr "$HOME/.config/"
+mv kitty "$HOME/.config/"
+mv scripts "$HOME/.config/"
+mv walker "$HOME/.config/"
+mv waybar "$HOME/.config/"
+mv yazi "$HOME/.config/"
+mv starship.toml "$HOME/.config/"
+mv Wallpapers "$HOME/Pictures/"

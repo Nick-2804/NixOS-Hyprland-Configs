@@ -12,7 +12,7 @@ pkill waybar
 waybar & 
 
 cp ~/.config/colorschemes/everforest/walker/style.css ~/.config/walker/themes/default
-pkill walker walker --gapplication-service
+pkill walker --gapplication-service
 walker --gapplication-service &
 
 echo "Theme switched to: EVERFOREST"
