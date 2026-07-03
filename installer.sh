@@ -41,7 +41,7 @@ mv yazi "$HOME/.config/"
 mv starship.toml "$HOME/.config/"
 mv Wallpapers "$HOME/Pictures/"
 
-sudo rm -rf /etc/nixos/*
+sudo rm /etc/nixos/configuration.nix
 sudo cp -r "$SCRIPT_DIR/etc/nixos/"* /etc/nixos/
 sudo nixos-rebuild switch --flake /etc/nixos
 
