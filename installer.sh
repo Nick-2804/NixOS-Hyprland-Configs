@@ -2,6 +2,8 @@
 
 set -e
 
+
+
 # Always use the directory where this script is located
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 cd "$SCRIPT_DIR"
@@ -38,3 +40,8 @@ mv waybar "$HOME/.config/"
 mv yazi "$HOME/.config/"
 mv starship.toml "$HOME/.config/"
 mv Wallpapers "$HOME/Pictures/"
+
+sudo rm -rf /etc/nixos/*
+sudo cp -r "$SCRIPT_DIR/etc/nixos/"* /etc/nixos/
+sudo nixos-rebuild switch --flake /etc/nixos
+
