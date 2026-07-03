@@ -142,6 +142,7 @@ services.tlp.settings = {
     	  discord
           neovim
     	  playerctl
+	  brightnessctl
 	  vscode
 	  fastfetch
 	  btop
