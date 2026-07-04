@@ -50,7 +50,10 @@ sudo nixos-rebuild switch --flake /etc/nixos
 
 echo "System is installed, applying a theme and then restarting"
 
+start-hyprland
+awww-daemon
+
 bash "$HOME/.config/scripts/electric-theme.sh"
 
-sudo shutdown now
+sudo reboot now now
 
