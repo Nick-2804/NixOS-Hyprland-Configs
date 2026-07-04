@@ -27,7 +27,7 @@
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   networking.hostName = "nixos"; 
-
+  
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -133,6 +133,7 @@
     vlc
     discord
     neovim
+    wl-clipboard
     playerctl
     brightnessctl
     vscode

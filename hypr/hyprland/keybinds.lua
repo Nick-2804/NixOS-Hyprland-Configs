@@ -33,8 +33,14 @@ hl.bind(mainMod .. " + SHIFT + l", hl.dsp.window.move({ direction = "right" }))
 hl.bind(mainMod .. " + SHIFT + i", hl.dsp.window.move({ direction = "up" }))
 hl.bind(mainMod .. " + SHIFT + k", hl.dsp.window.move({ direction = "down" }))
 
+-- Theme selector
+hl.bind(mainMod .. " + T", hl.dsp.exec_cmd("bash ~/.config/colorschemes/theme-selector.sh")) 
+-- Clipboard 
+hl.bind(mainMod .. " + X", hl.dsp.exec_cmd("walker -m clipboard"))
+-- Hyprpicker
+hl.bind(mainMod .. " + P", hl.dsp.exec_cmd("hyprpicker -a -n"))
 -- Tmp. Keybinds
-hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("bash /home/nick/.config/waybar/scripts/launch.sh"))
+hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("bash ~/.config/waybar/scripts/launch.sh"))
 
 
 -- Switch workspaces with mainMod + [0-9]

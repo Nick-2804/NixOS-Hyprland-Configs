@@ -1,6 +1,6 @@
 #!bin/bash
 
-awww img ~/Pictures/Wallpapers/Paper3.jpg
+awww img ~/Pictures/Wallpapers/Paper3.jpg --transition-type center
 
 cp ~/.config/colorschemes/tokyonight/hypr/themepath.lua ~/.config/hypr/hyprland/
 
@@ -12,7 +12,7 @@ pkill waybar
 waybar & 
 
 cp ~/.config/colorschemes/tokyonight/walker/style.css ~/.config/walker/themes/default
-pkill walker --gapplication-service
+pkill -f "walker --gapplication-service"
 walker --gapplication-service &
 
 echo "Theme switched to: TOKYONIGHT"
