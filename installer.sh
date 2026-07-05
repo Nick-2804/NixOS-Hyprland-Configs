@@ -27,6 +27,7 @@ echo "We are installing the new configfiles now!"
 
 mkdir -p "$HOME/.config"
 mkdir -p "$HOME/Pictures"
+mkdir -p "$HOME/Pictures/Screenshots"
 
 mv colorschemes "$HOME/.config/"
 mv dunst "$HOME/.config/"
@@ -55,5 +56,5 @@ awww-daemon
 
 bash "$HOME/.config/scripts/electric-theme.sh"
 
-sudo reboot now now
+sudo reboot now
 
