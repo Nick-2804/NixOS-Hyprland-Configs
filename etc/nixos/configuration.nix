@@ -137,6 +137,7 @@
     playerctl
     brightnessctl
     vscode
+    obsidian
     fastfetch
     btop
     cava
@@ -149,6 +150,7 @@
     libnotify
     waybar
     awww
+    hyprshot
     hyprpicker
     hyprpolkitagent
     hyprcursor

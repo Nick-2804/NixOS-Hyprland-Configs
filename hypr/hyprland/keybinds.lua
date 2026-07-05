@@ -1,4 +1,4 @@
----------------------
+
 ---- MY PROGRAMS ----
 ---------------------
 
@@ -37,6 +37,8 @@ hl.bind(mainMod .. " + SHIFT + k", hl.dsp.window.move({ direction = "down" }))
 hl.bind(mainMod .. " + T", hl.dsp.exec_cmd("bash ~/.config/colorschemes/theme-selector.sh")) 
 -- Clipboard 
 hl.bind(mainMod .. " + X", hl.dsp.exec_cmd("walker -m clipboard"))
+-- Hyprshot
+hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd("hyprshot -m region -o ~/Pictures/Screenshots"))
 -- Hyprpicker
 hl.bind(mainMod .. " + P", hl.dsp.exec_cmd("hyprpicker -a -n"))
 -- Tmp. Keybinds
