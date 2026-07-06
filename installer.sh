@@ -49,10 +49,14 @@ sudo rm -rf /etc/nixos/configuration.nix
 sudo cp -r "$SCRIPT_DIR/etc/nixos/"* /etc/nixos/
 sudo nixos-rebuild switch --flake /etc/nixos
 
-echo "System is installed, applying a theme and then restarting"
+echo "System is installed"
 
-start-hyprland
-awww-daemon
-awww -img "$HOME/Pictures/Wallpapers/Paper1.jpg"
-sudo reboot now
+echo "Start hyprland with 'shypr' after login"
+
+touch "$HOME/.first-login"
+
+echo "Rebooting..."
+sleep 5
+sudo reboot
+
 
