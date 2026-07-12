@@ -6,9 +6,9 @@
 
 hl.env("XCURSOR_SIZE", "24")
 hl.env("HYPRCURSOR_SIZE", "24")
-hl.env("HYPRCURSOR_THEME", "Bibata-Modern-Ice")
-hl.env("XCURSOR_THEME", "Bibata-Modern-Ice")
-hl.env("GTK_THEME" , "Bibata-Modern-Ice")
+hl.env("HYPRCURSOR_THEME", "GoogleDot-White")
+hl.env("XCURSOR_THEME", "GoogleDot-White")
+hl.env("GTK_THEME" , "GoogleDot-White")
 
 
 --Toolkit Backend

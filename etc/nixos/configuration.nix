@@ -130,35 +130,46 @@
   };
 
   environment.systemPackages = with pkgs; [
-    vlc
-    discord
-    neovim
+    git
+    unzip
+    ntfs3g
     wl-clipboard
-    playerctl
-    brightnessctl
-    vscode
-    obsidian
-    fastfetch
-    btop
-    cava
+    libnotify
+
     kitty
     starship
+    fastfetch
+    btop
+    yazi
+    cava
+    
+    hyprcursor
+    hyprpolkitagent
+    hyprpicker
+    hyprshot
+    brightnessctl
+    playerctl
+    pavucontrol
+    dunst
+    waybar
     walker
     elephant
-    yazi
-    dunst
-    libnotify
-    waybar
     awww
-    hyprshot
-    hyprpicker
-    hyprpolkitagent
-    hyprcursor
-    bibata-cursors
-    git
-    lua5_4
-    ntfs3g
-    unzip
+
+    nwg-look
+    orchis-theme
+    google-cursor
+
+    vlc
+    discord
+
+    obsidian
+
+    neovim
+    vscode
+    jetbrains.idea
+    jdk
+
     inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 
@@ -172,11 +183,6 @@
     upgrade      = "sudo nix flake update --flake /etc/nixos && sudo nixos-rebuild switch --flake /etc/nixos";
   };
   
-  environment.variables = {
-    XCURSOR_THEME = "Bibata-Modern-Ice";
-    XCURSOR_SIZE = "24";
-  };
-
   fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
   ];
